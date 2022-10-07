@@ -12,5 +12,18 @@ const tutorials = [
 ];
 
 const titleCased = () => {
-  return tutorials
+  let words = tutorials.map(item => item.split(" "))
+  //We divided elements of tutorials into words as new arrays
+
+  function makeItBigger (words){
+      let newArr = []
+
+    for(const element of words){
+      newArr.push(element.charAt(0).toUpperCase() + element.slice(1))
+      //We capitilazed each word here
+    }
+    return newArr.join(' ')
+    //we joined these words and made them as they were
+  }
+ return words.map(item => makeItBigger(item))
 }
